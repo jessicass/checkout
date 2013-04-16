@@ -17,8 +17,8 @@ public class CheckOutTest {
 	@Test
     public void should1AFor50() {
     	// given
-    	co.addNewRule(new PricingRule("A",1,50));
-    	co.addNewRule(new PricingRule("A",3,130));
+		co.addNewRule(new PricingRule("A",1,50));
+		co.addNewRule(new PricingRule("A",3,130));
     	
     	// when
     	co.scan("A");
@@ -44,8 +44,8 @@ public class CheckOutTest {
 	@Test
     public void should3AFor130() {
     	// given
-    	co.addNewRule(new PricingRule("A",3,130));
     	co.addNewRule(new PricingRule("A",1,50));
+    	co.addNewRule(new PricingRule("A",3,130));
     	
     	// when
     	co.scan("A");
@@ -59,8 +59,8 @@ public class CheckOutTest {
 //    @Test
 	public void should3A1BFor160() {
 		// given
-    	co.addNewRule(new PricingRule("A",3,130));
     	co.addNewRule(new PricingRule("A",1,50));
+    	co.addNewRule(new PricingRule("A",3,130));
 
 		// then
 //	    assert_equal(160, price("AAAB"));

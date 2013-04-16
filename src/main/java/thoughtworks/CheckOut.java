@@ -1,13 +1,19 @@
 package thoughtworks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CheckOut {
 	public int total;
 	Map<String, Integer> itemTotalNumber = new HashMap<String, Integer>();
-	ArrayList<PricingRule> pricingRules = new ArrayList<PricingRule>(); 
+	List<PricingRule> pricingRules = new ArrayList<PricingRule>(); 
+	Comparator<PricingRule> comparator = new Comparator<PricingRule>(){
+		   public int compare(PricingRule rule1, PricingRule rule2) {
+			   if(rule1.getItemName().matches(rule2.getItemName())){
+				   return rule2.getNumber() - rule1.getNumber(); 
+			   }
+			   return 0;
+		   }
+	};
 
 	public void addNewRule(PricingRule pricingRule) {
 		pricingRules.add(pricingRule);
@@ -34,7 +40,6 @@ public class CheckOut {
 	}
 
 	private void sortPricingRules() {
-		//Œ™πÊ‘Ú≈≈–Ú
-		
+		Collections.sort(pricingRules,comparator);
 	}
 }

@@ -21,4 +21,12 @@ public class PricingRule {
 		}
 		return 0;
 	}
+	
+	public String getItemName() {
+		return itemName;
+	}
+	
+	public int getNumber() {
+		return number;
+	}
 }
