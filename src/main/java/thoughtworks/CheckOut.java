@@ -6,18 +6,10 @@ public class CheckOut {
 	public int total;
 	Map<String, Integer> itemTotalNumber = new HashMap<String, Integer>();
 	List<PricingRule> pricingRules = new ArrayList<PricingRule>(); 
-	Comparator<PricingRule> comparator = new Comparator<PricingRule>(){
-		   public int compare(PricingRule rule1, PricingRule rule2) {
-			   if(rule1.getItemName().matches(rule2.getItemName())){
-				   return rule2.getNumber() - rule1.getNumber(); 
-			   }
-			   return 0;
-		   }
-	};
-
+	
 	public void addNewRule(PricingRule pricingRule) {
 		pricingRules.add(pricingRule);
-		sortPricingRules();
+		sortPricingRules(pricingRule);
 	}
 
 	public void scan(String itemName) {
@@ -46,7 +38,7 @@ public class CheckOut {
 		}
 	}
 
-	private void sortPricingRules() {
-		Collections.sort(pricingRules,comparator);
+	private void sortPricingRules(PricingRule pricingRule) {
+		Collections.sort(pricingRules,pricingRule.getComparator());
 	}
 }

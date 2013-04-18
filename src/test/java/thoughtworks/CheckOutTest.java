@@ -12,12 +12,12 @@ public class CheckOutTest {
 	@Before
 	public void setUp(){
 		co = new CheckOut();
-    	co.addNewRule(new PricingRule("A",1,50));
-    	co.addNewRule(new PricingRule("A",3,130));
-    	co.addNewRule(new PricingRule("B",1,30));
-    	co.addNewRule(new PricingRule("B",2,45));
-    	co.addNewRule(new PricingRule("C",1,20));
-    	co.addNewRule(new PricingRule("D",1,15));
+    	co.addNewRule(new PricingByFixedNumber("A",3,130));
+    	co.addNewRule(new PricingByFixedNumber("D",1,15));
+    	co.addNewRule(new PricingByFixedNumber("A",1,50));
+    	co.addNewRule(new PricingByFixedNumber("B",2,45));
+    	co.addNewRule(new PricingByFixedNumber("C",1,20));
+    	co.addNewRule(new PricingByFixedNumber("B",1,30));
 	}
 	
 	@Test
