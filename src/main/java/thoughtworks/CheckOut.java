@@ -30,6 +30,13 @@ public class CheckOut {
 		totalPriceCalculate();
 	}
 
+	public int price(String goods) {
+		for(int i = 0; i < goods.length(); i++){
+			scan(String.valueOf(goods.charAt(i)));
+		}
+		return total;
+	}
+	
 	private void totalPriceCalculate() {
 		total = 0;
 		Map<String, Integer> currentTotalNumber = new HashMap<String, Integer>();
